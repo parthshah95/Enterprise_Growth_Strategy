@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="84d2aaa06b15439ab9d5d24b2ee3dff8" Name="Diagram1" ZoomLevel="300">
+        <EntityTypeShape EntityType="SalesDBModel.accountMST" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesDBModel.categoryMST" Width="1.5" PointX="11.25" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesDBModel.customerMST" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesDBModel.customerStatusMST" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesDBModel.customerTypeMST" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesDBModel.followup" Width="1.5" PointX="7.5" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesDBModel.inquiryMST" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesDBModel.messageMail" Width="1.5" PointX="10.5" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesDBModel.productMST" Width="1.5" PointX="13.5" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesDBModel.storeMST" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesDBModel.userDetail" Width="1.5" PointX="8.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesDBModel.userGroupMST" Width="1.5" PointX="6" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SalesDBModel.walkinDetail" Width="1.5" PointX="10.5" PointY="7" IsExpanded="true" />
+        <AssociationConnector Association="SalesDBModel.FK_storeMST_accountMST" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesDBModel.FK_userDetails_accountMST" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesDBModel.FK_categoryMST_categoryMST_Parent" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesDBModel.FK_productMST_categoryMST" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesDBModel.FK_customerMST_customerStatusMST" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesDBModel.FK_customerMST_customerTypeMST" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesDBModel.FK_inquiryMST_customerMST" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesDBModel.FK_walkinDetails_customerMST" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesDBModel.FK_followups_inquiryMST" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesDBModel.FK_inquiryMST_productMST" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesDBModel.FK_inquiryMST_storeMST" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesDBModel.FK_inquiryMST_userDetails_Owner" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesDBModel.FK_messageMail_messageMail_Parent" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesDBModel.FK_messageMail_userDetails_receiver" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesDBModel.FK_messageMail_userDetails_sender" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesDBModel.FK_productMST_userDetails_Created" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesDBModel.FK_productMST_userDetails_Modified" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesDBModel.FK_userDetails_storeMST" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesDBModel.FK_walkinDetails_storeMST" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesDBModel.FK_userDetails_userGroupMST" ManuallyRouted="false" />
+        <AssociationConnector Association="SalesDBModel.FK_walkinDetails_userDetails" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
