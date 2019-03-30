@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Sony3ModelStoreContainer" CdmEntityContainer="Sony3Entities">
+    <EntitySetMapping Name="accountMSTs">
+      <EntityTypeMapping TypeName="Sony3Model.accountMST">
+        <MappingFragment StoreEntitySet="accountMST">
+          <ScalarProperty Name="accountID" ColumnName="accountID" />
+          <ScalarProperty Name="accountName" ColumnName="accountName" />
+          <ScalarProperty Name="accountCode" ColumnName="accountCode" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LastmodifiedDate" ColumnName="LastmodifiedDate" />
+          <ScalarProperty Name="LastmodifiedBy" ColumnName="LastmodifiedBy" />
+          <ScalarProperty Name="accountManage" ColumnName="accountManage" />
+          <ScalarProperty Name="accountManageContact" ColumnName="accountManageContact" />
+          <ScalarProperty Name="allowedStoreNumber" ColumnName="allowedStoreNumber" />
+          <ScalarProperty Name="allowedUserNumber" ColumnName="allowedUserNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="categoryMSTs">
+      <EntityTypeMapping TypeName="Sony3Model.categoryMST">
+        <MappingFragment StoreEntitySet="categoryMST">
+          <ScalarProperty Name="categoryID" ColumnName="categoryID" />
+          <ScalarProperty Name="catCode" ColumnName="catCode" />
+          <ScalarProperty Name="catName" ColumnName="catName" />
+          <ScalarProperty Name="catDescription" ColumnName="catDescription" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LastmodifiedDate" ColumnName="LastmodifiedDate" />
+          <ScalarProperty Name="LastmodifiedBy" ColumnName="LastmodifiedBy" />
+          <ScalarProperty Name="parentcategoryID" ColumnName="parentcategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customerMSTs">
+      <EntityTypeMapping TypeName="Sony3Model.customerMST">
+        <MappingFragment StoreEntitySet="customerMST">
+          <ScalarProperty Name="customerID" ColumnName="customerID" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="middelName" ColumnName="middelName" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="aniverssaryDate" ColumnName="aniverssaryDate" />
+          <ScalarProperty Name="homeNumber" ColumnName="homeNumber" />
+          <ScalarProperty Name="cellNumber" ColumnName="cellNumber" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="website" ColumnName="website" />
+          <ScalarProperty Name="carNumber" ColumnName="carNumber" />
+          <ScalarProperty Name="carCompany" ColumnName="carCompany" />
+          <ScalarProperty Name="customerTypeID" ColumnName="customerTypeID" />
+          <ScalarProperty Name="customerStatusID" ColumnName="customerStatusID" />
+          <ScalarProperty Name="provideNotification" ColumnName="provideNotification" />
+          <ScalarProperty Name="addressLine1" ColumnName="addressLine1" />
+          <ScalarProperty Name="addressLine2" ColumnName="addressLine2" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="zip" ColumnName="zip" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="companyName" ColumnName="companyName" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="workPhone" ColumnName="workPhone" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LastmodifiedDate" ColumnName="LastmodifiedDate" />
+          <ScalarProperty Name="LastmodifiedBy" ColumnName="LastmodifiedBy" />
+          <ScalarProperty Name="customerPIC" ColumnName="customerPIC" />
+          <ScalarProperty Name="PANNumber" ColumnName="PANNumber" />
+          <ScalarProperty Name="PANCopy" ColumnName="PANCopy" />
+          <ScalarProperty Name="DrivingLicenseNumber" ColumnName="DrivingLicenseNumber" />
+          <ScalarProperty Name="DrivingLicenseCopy" ColumnName="DrivingLicenseCopy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customerStatusMSTs">
+      <EntityTypeMapping TypeName="Sony3Model.customerStatusMST">
+        <MappingFragment StoreEntitySet="customerStatusMST">
+          <ScalarProperty Name="customerStatusID" ColumnName="customerStatusID" />
+          <ScalarProperty Name="customerStatus" ColumnName="customerStatus" />
+          <ScalarProperty Name="statusDetail" ColumnName="statusDetail" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customerTypeMSTs">
+      <EntityTypeMapping TypeName="Sony3Model.customerTypeMST">
+        <MappingFragment StoreEntitySet="customerTypeMST">
+          <ScalarProperty Name="customerTypeID" ColumnName="customerTypeID" />
+          <ScalarProperty Name="customerType" ColumnName="customerType" />
+          <ScalarProperty Name="typeDetail" ColumnName="typeDetail" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inquiryMSTs">
+      <EntityTypeMapping TypeName="Sony3Model.inquiryMST">
+        <MappingFragment StoreEntitySet="inquiryMST">
+          <ScalarProperty Name="storeID" ColumnName="storeID" />
+          <ScalarProperty Name="inquiryMST1" ColumnName="inquiryMST" />
+          <ScalarProperty Name="customerID" ColumnName="customerID" />
+          <ScalarProperty Name="custName" ColumnName="custName" />
+          <ScalarProperty Name="productID" ColumnName="productID" />
+          <ScalarProperty Name="productName" ColumnName="productName" />
+          <ScalarProperty Name="productCode" ColumnName="productCode" />
+          <ScalarProperty Name="productUnitPrice" ColumnName="productUnitPrice" />
+          <ScalarProperty Name="discountedPrice" ColumnName="discountedPrice" />
+          <ScalarProperty Name="inquiryType" ColumnName="inquiryType" />
+          <ScalarProperty Name="inquiryStatus" ColumnName="inquiryStatus" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="deletedDate" ColumnName="deletedDate" />
+          <ScalarProperty Name="deletedby" ColumnName="deletedby" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+          <ScalarProperty Name="inquiryOwner" ColumnName="inquiryOwner" />
+          <ScalarProperty Name="inquiryOwnerID" ColumnName="inquiryOwnerID" />
+          <ScalarProperty Name="inquiryNextFollowupDate" ColumnName="inquiryNextFollowupDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="messageMails">
+      <EntityTypeMapping TypeName="Sony3Model.messageMail">
+        <MappingFragment StoreEntitySet="messageMail">
+          <ScalarProperty Name="messageID" ColumnName="messageID" />
+          <ScalarProperty Name="senderID" ColumnName="senderID" />
+          <ScalarProperty Name="receiverID" ColumnName="receiverID" />
+          <ScalarProperty Name="messageDetail" ColumnName="messageDetail" />
+          <ScalarProperty Name="messageDate" ColumnName="messageDate" />
+          <ScalarProperty Name="isRead" ColumnName="isRead" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="isImportant" ColumnName="isImportant" />
+          <ScalarProperty Name="messageType" ColumnName="messageType" />
+          <ScalarProperty Name="parentMessageID" ColumnName="parentMessageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productMSTs">
+      <EntityTypeMapping TypeName="Sony3Model.productMST">
+        <MappingFragment StoreEntitySet="productMST">
+          <ScalarProperty Name="productID" ColumnName="productID" />
+          <ScalarProperty Name="productCode" ColumnName="productCode" />
+          <ScalarProperty Name="productName" ColumnName="productName" />
+          <ScalarProperty Name="productDesciption" ColumnName="productDesciption" />
+          <ScalarProperty Name="categoryID" ColumnName="categoryID" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LastmodifiedDate" ColumnName="LastmodifiedDate" />
+          <ScalarProperty Name="LastmodifiedBy" ColumnName="LastmodifiedBy" />
+          <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+          <ScalarProperty Name="productPic" ColumnName="productPic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="storeMSTs">
+      <EntityTypeMapping TypeName="Sony3Model.storeMST">
+        <MappingFragment StoreEntitySet="storeMST">
+          <ScalarProperty Name="storeID" ColumnName="storeID" />
+          <ScalarProperty Name="accountID" ColumnName="accountID" />
+          <ScalarProperty Name="storeName" ColumnName="storeName" />
+          <ScalarProperty Name="storeDetail" ColumnName="storeDetail" />
+          <ScalarProperty Name="storeHolder" ColumnName="storeHolder" />
+          <ScalarProperty Name="ContactDetail" ColumnName="ContactDetail" />
+          <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+          <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LastmodifiedDate" ColumnName="LastmodifiedDate" />
+          <ScalarProperty Name="LastmodifiedBy" ColumnName="LastmodifiedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userDetails">
+      <EntityTypeMapping TypeName="Sony3Model.userDetail">
+        <MappingFragment StoreEntitySet="userDetails">
+          <ScalarProperty Name="storeID" ColumnName="storeID" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="contactNumber" ColumnName="contactNumber" />
+          <ScalarProperty Name="addressLine1" ColumnName="addressLine1" />
+          <ScalarProperty Name="addressLine2" ColumnName="addressLine2" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="userPass" ColumnName="userPass" />
+          <ScalarProperty Name="userGroupID" ColumnName="userGroupID" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LastmodifiedDate" ColumnName="LastmodifiedDate" />
+          <ScalarProperty Name="LastmodifiedBy" ColumnName="LastmodifiedBy" />
+          <ScalarProperty Name="accountID" ColumnName="accountID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userGroupMSTs">
+      <EntityTypeMapping TypeName="Sony3Model.userGroupMST">
+        <MappingFragment StoreEntitySet="userGroupMST">
+          <ScalarProperty Name="userGroupID" ColumnName="userGroupID" />
+          <ScalarProperty Name="groupName" ColumnName="groupName" />
+          <ScalarProperty Name="groupDetail" ColumnName="groupDetail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="followups">
+      <EntityTypeMapping TypeName="Sony3Model.followup">
+        <MappingFragment StoreEntitySet="followups">
+          <ScalarProperty Name="followupType" ColumnName="followupType" />
+          <ScalarProperty Name="followupDetail" ColumnName="followupDetail" />
+          <ScalarProperty Name="doneDate" ColumnName="doneDate" />
+          <ScalarProperty Name="isDone" ColumnName="isDone" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="inquiryID" ColumnName="inquiryID" />
+          <ScalarProperty Name="followupDate" ColumnName="followupDate" />
+          <ScalarProperty Name="followupID" ColumnName="followupID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="walkinDetails">
+      <EntityTypeMapping TypeName="Sony3Model.walkinDetail">
+        <MappingFragment StoreEntitySet="walkinDetails">
+          <ScalarProperty Name="storeID" ColumnName="storeID" />
+          <ScalarProperty Name="createdDate" ColumnName="createdDate" />
+          <ScalarProperty Name="createdBy" ColumnName="createdBy" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="walkinDate" ColumnName="walkinDate" />
+          <ScalarProperty Name="customerID" ColumnName="customerID" />
+          <ScalarProperty Name="walkinID" ColumnName="walkinID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

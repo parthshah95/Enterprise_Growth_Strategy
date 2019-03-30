@@ -1,0 +1,585 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SalesDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="SalesDBModelStoreContainer">
+    <EntitySet Name="accountMST" EntityType="SalesDBModel.Store.accountMST" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="categoryMST" EntityType="SalesDBModel.Store.categoryMST" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="customerMST" EntityType="SalesDBModel.Store.customerMST" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="customerStatusMST" EntityType="SalesDBModel.Store.customerStatusMST" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="customerTypeMST" EntityType="SalesDBModel.Store.customerTypeMST" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="followups" EntityType="SalesDBModel.Store.followups" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="inquiryMST" EntityType="SalesDBModel.Store.inquiryMST" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="messageMail" EntityType="SalesDBModel.Store.messageMail" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="productMST" EntityType="SalesDBModel.Store.productMST" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="storeMST" EntityType="SalesDBModel.Store.storeMST" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="userDetails" EntityType="SalesDBModel.Store.userDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="userGroupMST" EntityType="SalesDBModel.Store.userGroupMST" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="walkinDetails" EntityType="SalesDBModel.Store.walkinDetails" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_categoryMST_categoryMST_Parent" Association="SalesDBModel.Store.FK_categoryMST_categoryMST_Parent">
+      <End Role="categoryMST" EntitySet="categoryMST" />
+      <End Role="categoryMST1" EntitySet="categoryMST" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customerMST_customerStatusMST" Association="SalesDBModel.Store.FK_customerMST_customerStatusMST">
+      <End Role="customerStatusMST" EntitySet="customerStatusMST" />
+      <End Role="customerMST" EntitySet="customerMST" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customerMST_customerTypeMST" Association="SalesDBModel.Store.FK_customerMST_customerTypeMST">
+      <End Role="customerTypeMST" EntitySet="customerTypeMST" />
+      <End Role="customerMST" EntitySet="customerMST" />
+    </AssociationSet>
+    <AssociationSet Name="FK_followups_inquiryMST" Association="SalesDBModel.Store.FK_followups_inquiryMST">
+      <End Role="inquiryMST" EntitySet="inquiryMST" />
+      <End Role="followups" EntitySet="followups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_inquiryMST_customerMST" Association="SalesDBModel.Store.FK_inquiryMST_customerMST">
+      <End Role="customerMST" EntitySet="customerMST" />
+      <End Role="inquiryMST" EntitySet="inquiryMST" />
+    </AssociationSet>
+    <AssociationSet Name="FK_inquiryMST_productMST" Association="SalesDBModel.Store.FK_inquiryMST_productMST">
+      <End Role="productMST" EntitySet="productMST" />
+      <End Role="inquiryMST" EntitySet="inquiryMST" />
+    </AssociationSet>
+    <AssociationSet Name="FK_inquiryMST_storeMST" Association="SalesDBModel.Store.FK_inquiryMST_storeMST">
+      <End Role="storeMST" EntitySet="storeMST" />
+      <End Role="inquiryMST" EntitySet="inquiryMST" />
+    </AssociationSet>
+    <AssociationSet Name="FK_inquiryMST_userDetails_Owner" Association="SalesDBModel.Store.FK_inquiryMST_userDetails_Owner">
+      <End Role="userDetails" EntitySet="userDetails" />
+      <End Role="inquiryMST" EntitySet="inquiryMST" />
+    </AssociationSet>
+    <AssociationSet Name="FK_messageMail_messageMail_Parent" Association="SalesDBModel.Store.FK_messageMail_messageMail_Parent">
+      <End Role="messageMail" EntitySet="messageMail" />
+      <End Role="messageMail1" EntitySet="messageMail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_messageMail_userDetails_receiver" Association="SalesDBModel.Store.FK_messageMail_userDetails_receiver">
+      <End Role="userDetails" EntitySet="userDetails" />
+      <End Role="messageMail" EntitySet="messageMail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_messageMail_userDetails_sender" Association="SalesDBModel.Store.FK_messageMail_userDetails_sender">
+      <End Role="userDetails" EntitySet="userDetails" />
+      <End Role="messageMail" EntitySet="messageMail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_productMST_categoryMST" Association="SalesDBModel.Store.FK_productMST_categoryMST">
+      <End Role="categoryMST" EntitySet="categoryMST" />
+      <End Role="productMST" EntitySet="productMST" />
+    </AssociationSet>
+    <AssociationSet Name="FK_productMST_userDetails_Created" Association="SalesDBModel.Store.FK_productMST_userDetails_Created">
+      <End Role="userDetails" EntitySet="userDetails" />
+      <End Role="productMST" EntitySet="productMST" />
+    </AssociationSet>
+    <AssociationSet Name="FK_productMST_userDetails_Modified" Association="SalesDBModel.Store.FK_productMST_userDetails_Modified">
+      <End Role="userDetails" EntitySet="userDetails" />
+      <End Role="productMST" EntitySet="productMST" />
+    </AssociationSet>
+    <AssociationSet Name="FK_storeMST_accountMST" Association="SalesDBModel.Store.FK_storeMST_accountMST">
+      <End Role="accountMST" EntitySet="accountMST" />
+      <End Role="storeMST" EntitySet="storeMST" />
+    </AssociationSet>
+    <AssociationSet Name="FK_userDetails_accountMST" Association="SalesDBModel.Store.FK_userDetails_accountMST">
+      <End Role="accountMST" EntitySet="accountMST" />
+      <End Role="userDetails" EntitySet="userDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_userDetails_storeMST" Association="SalesDBModel.Store.FK_userDetails_storeMST">
+      <End Role="storeMST" EntitySet="storeMST" />
+      <End Role="userDetails" EntitySet="userDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_userDetails_userGroupMST" Association="SalesDBModel.Store.FK_userDetails_userGroupMST">
+      <End Role="userGroupMST" EntitySet="userGroupMST" />
+      <End Role="userDetails" EntitySet="userDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_walkinDetails_customerMST" Association="SalesDBModel.Store.FK_walkinDetails_customerMST">
+      <End Role="customerMST" EntitySet="customerMST" />
+      <End Role="walkinDetails" EntitySet="walkinDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_walkinDetails_storeMST" Association="SalesDBModel.Store.FK_walkinDetails_storeMST">
+      <End Role="storeMST" EntitySet="storeMST" />
+      <End Role="walkinDetails" EntitySet="walkinDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_walkinDetails_userDetails" Association="SalesDBModel.Store.FK_walkinDetails_userDetails">
+      <End Role="userDetails" EntitySet="userDetails" />
+      <End Role="walkinDetails" EntitySet="walkinDetails" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="accountMST">
+    <Key>
+      <PropertyRef Name="accountID" />
+    </Key>
+    <Property Name="accountID" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="accountName" Type="nvarchar" MaxLength="50" />
+    <Property Name="accountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="numeric" />
+    <Property Name="LastmodifiedDate" Type="datetime" />
+    <Property Name="LastmodifiedBy" Type="numeric" />
+    <Property Name="accountManage" Type="nvarchar" MaxLength="50" />
+    <Property Name="accountManageContact" Type="nvarchar" MaxLength="100" />
+    <Property Name="allowedStoreNumber" Type="numeric" />
+    <Property Name="allowedUserNumber" Type="numeric" />
+  </EntityType>
+  <EntityType Name="categoryMST">
+    <Key>
+      <PropertyRef Name="categoryID" />
+    </Key>
+    <Property Name="categoryID" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="catCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="catName" Type="nvarchar" MaxLength="200" />
+    <Property Name="catDescription" Type="nvarchar" MaxLength="500" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="numeric" />
+    <Property Name="LastmodifiedDate" Type="datetime" />
+    <Property Name="LastmodifiedBy" Type="numeric" />
+    <Property Name="parentcategoryID" Type="numeric" />
+  </EntityType>
+  <EntityType Name="customerMST">
+    <Key>
+      <PropertyRef Name="customerID" />
+    </Key>
+    <Property Name="customerID" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="firstName" Type="nvarchar" MaxLength="100" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="100" />
+    <Property Name="middelName" Type="nvarchar" MaxLength="100" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="aniverssaryDate" Type="datetime" />
+    <Property Name="homeNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="cellNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="200" />
+    <Property Name="website" Type="nvarchar" MaxLength="100" />
+    <Property Name="carNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="carCompany" Type="nvarchar" MaxLength="50" />
+    <Property Name="customerTypeID" Type="numeric" />
+    <Property Name="customerStatusID" Type="numeric" />
+    <Property Name="provideNotification" Type="bit" />
+    <Property Name="addressLine1" Type="nvarchar" MaxLength="500" />
+    <Property Name="addressLine2" Type="nvarchar" MaxLength="500" />
+    <Property Name="city" Type="nvarchar" MaxLength="50" />
+    <Property Name="state" Type="nvarchar" MaxLength="50" />
+    <Property Name="zip" Type="nvarchar" MaxLength="50" />
+    <Property Name="country" Type="nvarchar" MaxLength="50" />
+    <Property Name="companyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="designation" Type="nvarchar" MaxLength="50" />
+    <Property Name="workPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="numeric" />
+    <Property Name="LastmodifiedDate" Type="datetime" />
+    <Property Name="LastmodifiedBy" Type="numeric" />
+    <Property Name="customerPIC" Type="nvarchar" MaxLength="50" />
+    <Property Name="PANNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="PANCopy" Type="nvarchar" MaxLength="50" />
+    <Property Name="DrivingLicenseNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="DrivingLicenseCopy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="customerStatusMST">
+    <Key>
+      <PropertyRef Name="customerStatusID" />
+    </Key>
+    <Property Name="customerStatusID" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="customerStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="statusDetail" Type="nvarchar" MaxLength="500" />
+    <Property Name="isActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="customerTypeMST">
+    <Key>
+      <PropertyRef Name="customerTypeID" />
+    </Key>
+    <Property Name="customerTypeID" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="customerType" Type="nvarchar" MaxLength="50" />
+    <Property Name="typeDetail" Type="nvarchar" MaxLength="500" />
+    <Property Name="isActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="followups">
+    <Key>
+      <PropertyRef Name="followupID" />
+    </Key>
+    <Property Name="followupID" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="followupDate" Type="datetime" />
+    <Property Name="inquiryID" Type="numeric" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="isDone" Type="bit" />
+    <Property Name="doneDate" Type="datetime" />
+    <Property Name="followupDetail" Type="text" />
+    <Property Name="followupType" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="inquiryMST">
+    <Key>
+      <PropertyRef Name="inquiryMST" />
+    </Key>
+    <Property Name="inquiryMST" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="customerID" Type="numeric" />
+    <Property Name="custName" Type="nvarchar" MaxLength="500" />
+    <Property Name="productID" Type="numeric" />
+    <Property Name="productName" Type="nvarchar" MaxLength="500" />
+    <Property Name="productCode" Type="nvarchar" MaxLength="500" />
+    <Property Name="productUnitPrice" Type="numeric" Scale="2" />
+    <Property Name="discountedPrice" Type="numeric" Scale="2" />
+    <Property Name="inquiryType" Type="nvarchar" MaxLength="50" />
+    <Property Name="inquiryStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="deletedDate" Type="datetime" />
+    <Property Name="deletedby" Type="numeric" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="createdBy" Type="numeric" />
+    <Property Name="inquiryOwner" Type="nvarchar" MaxLength="500" />
+    <Property Name="inquiryOwnerID" Type="numeric" />
+    <Property Name="inquiryNextFollowupDate" Type="datetime" />
+    <Property Name="storeID" Type="numeric" />
+  </EntityType>
+  <EntityType Name="messageMail">
+    <Key>
+      <PropertyRef Name="messageID" />
+    </Key>
+    <Property Name="messageID" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="senderID" Type="numeric" />
+    <Property Name="receiverID" Type="numeric" />
+    <Property Name="messageDetail" Type="text" />
+    <Property Name="messageDate" Type="datetime" />
+    <Property Name="isRead" Type="bit" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="isImportant" Type="bit" />
+    <Property Name="messageType" Type="nvarchar" MaxLength="50" />
+    <Property Name="parentMessageID" Type="numeric" />
+  </EntityType>
+  <EntityType Name="productMST">
+    <Key>
+      <PropertyRef Name="productID" />
+    </Key>
+    <Property Name="productID" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="productCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="productName" Type="nvarchar" MaxLength="200" />
+    <Property Name="productDesciption" Type="nvarchar" MaxLength="500" />
+    <Property Name="categoryID" Type="numeric" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="numeric" />
+    <Property Name="LastmodifiedDate" Type="datetime" />
+    <Property Name="LastmodifiedBy" Type="numeric" />
+    <Property Name="UnitPrice" Type="numeric" Scale="2" />
+    <Property Name="productPic" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="storeMST">
+    <Key>
+      <PropertyRef Name="storeID" />
+    </Key>
+    <Property Name="storeID" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="accountID" Type="numeric" />
+    <Property Name="storeName" Type="nvarchar" MaxLength="50" />
+    <Property Name="storeDetail" Type="nvarchar" MaxLength="500" />
+    <Property Name="storeHolder" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactDetail" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddressLine1" Type="nvarchar" MaxLength="200" />
+    <Property Name="AddressLine2" Type="nvarchar" MaxLength="200" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" />
+    <Property Name="Zip" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="numeric" />
+    <Property Name="LastmodifiedDate" Type="datetime" />
+    <Property Name="LastmodifiedBy" Type="numeric" />
+  </EntityType>
+  <EntityType Name="userDetails">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="firstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="lastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="contactNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="addressLine1" Type="nvarchar" MaxLength="200" />
+    <Property Name="addressLine2" Type="nvarchar" MaxLength="200" />
+    <Property Name="city" Type="nvarchar" MaxLength="50" />
+    <Property Name="state" Type="nvarchar" MaxLength="50" />
+    <Property Name="country" Type="nvarchar" MaxLength="50" />
+    <Property Name="userName" Type="nvarchar" MaxLength="100" />
+    <Property Name="userPass" Type="nvarchar" MaxLength="500" />
+    <Property Name="userGroupID" Type="numeric" />
+    <Property Name="isActive" Type="bit" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="CreatedBy" Type="numeric" />
+    <Property Name="LastmodifiedDate" Type="datetime" />
+    <Property Name="LastmodifiedBy" Type="numeric" />
+    <Property Name="accountID" Type="numeric" />
+    <Property Name="storeID" Type="numeric" />
+  </EntityType>
+  <EntityType Name="userGroupMST">
+    <Key>
+      <PropertyRef Name="userGroupID" />
+    </Key>
+    <Property Name="userGroupID" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="groupName" Type="nvarchar" MaxLength="50" />
+    <Property Name="groupDetail" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="walkinDetails">
+    <Key>
+      <PropertyRef Name="walkinID" />
+    </Key>
+    <Property Name="walkinID" Type="numeric" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="customerID" Type="numeric" />
+    <Property Name="walkinDate" Type="datetime" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="createdBy" Type="numeric" />
+    <Property Name="createdDate" Type="datetime" />
+    <Property Name="storeID" Type="numeric" />
+  </EntityType>
+  <Association Name="FK_categoryMST_categoryMST_Parent">
+    <End Role="categoryMST" Type="SalesDBModel.Store.categoryMST" Multiplicity="0..1" />
+    <End Role="categoryMST1" Type="SalesDBModel.Store.categoryMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categoryMST">
+        <PropertyRef Name="categoryID" />
+      </Principal>
+      <Dependent Role="categoryMST1">
+        <PropertyRef Name="parentcategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customerMST_customerStatusMST">
+    <End Role="customerStatusMST" Type="SalesDBModel.Store.customerStatusMST" Multiplicity="0..1" />
+    <End Role="customerMST" Type="SalesDBModel.Store.customerMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customerStatusMST">
+        <PropertyRef Name="customerStatusID" />
+      </Principal>
+      <Dependent Role="customerMST">
+        <PropertyRef Name="customerStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customerMST_customerTypeMST">
+    <End Role="customerTypeMST" Type="SalesDBModel.Store.customerTypeMST" Multiplicity="0..1" />
+    <End Role="customerMST" Type="SalesDBModel.Store.customerMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customerTypeMST">
+        <PropertyRef Name="customerTypeID" />
+      </Principal>
+      <Dependent Role="customerMST">
+        <PropertyRef Name="customerTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_followups_inquiryMST">
+    <End Role="inquiryMST" Type="SalesDBModel.Store.inquiryMST" Multiplicity="0..1" />
+    <End Role="followups" Type="SalesDBModel.Store.followups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inquiryMST">
+        <PropertyRef Name="inquiryMST" />
+      </Principal>
+      <Dependent Role="followups">
+        <PropertyRef Name="inquiryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_inquiryMST_customerMST">
+    <End Role="customerMST" Type="SalesDBModel.Store.customerMST" Multiplicity="0..1" />
+    <End Role="inquiryMST" Type="SalesDBModel.Store.inquiryMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customerMST">
+        <PropertyRef Name="customerID" />
+      </Principal>
+      <Dependent Role="inquiryMST">
+        <PropertyRef Name="customerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_inquiryMST_productMST">
+    <End Role="productMST" Type="SalesDBModel.Store.productMST" Multiplicity="0..1" />
+    <End Role="inquiryMST" Type="SalesDBModel.Store.inquiryMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productMST">
+        <PropertyRef Name="productID" />
+      </Principal>
+      <Dependent Role="inquiryMST">
+        <PropertyRef Name="productID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_inquiryMST_storeMST">
+    <End Role="storeMST" Type="SalesDBModel.Store.storeMST" Multiplicity="0..1" />
+    <End Role="inquiryMST" Type="SalesDBModel.Store.inquiryMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="storeMST">
+        <PropertyRef Name="storeID" />
+      </Principal>
+      <Dependent Role="inquiryMST">
+        <PropertyRef Name="storeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_inquiryMST_userDetails_Owner">
+    <End Role="userDetails" Type="SalesDBModel.Store.userDetails" Multiplicity="0..1" />
+    <End Role="inquiryMST" Type="SalesDBModel.Store.inquiryMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userDetails">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="inquiryMST">
+        <PropertyRef Name="inquiryOwnerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_messageMail_messageMail_Parent">
+    <End Role="messageMail" Type="SalesDBModel.Store.messageMail" Multiplicity="0..1" />
+    <End Role="messageMail1" Type="SalesDBModel.Store.messageMail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="messageMail">
+        <PropertyRef Name="messageID" />
+      </Principal>
+      <Dependent Role="messageMail1">
+        <PropertyRef Name="parentMessageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_messageMail_userDetails_receiver">
+    <End Role="userDetails" Type="SalesDBModel.Store.userDetails" Multiplicity="0..1" />
+    <End Role="messageMail" Type="SalesDBModel.Store.messageMail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userDetails">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="messageMail">
+        <PropertyRef Name="receiverID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_messageMail_userDetails_sender">
+    <End Role="userDetails" Type="SalesDBModel.Store.userDetails" Multiplicity="0..1" />
+    <End Role="messageMail" Type="SalesDBModel.Store.messageMail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userDetails">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="messageMail">
+        <PropertyRef Name="senderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_productMST_categoryMST">
+    <End Role="categoryMST" Type="SalesDBModel.Store.categoryMST" Multiplicity="0..1" />
+    <End Role="productMST" Type="SalesDBModel.Store.productMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categoryMST">
+        <PropertyRef Name="categoryID" />
+      </Principal>
+      <Dependent Role="productMST">
+        <PropertyRef Name="categoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_productMST_userDetails_Created">
+    <End Role="userDetails" Type="SalesDBModel.Store.userDetails" Multiplicity="0..1" />
+    <End Role="productMST" Type="SalesDBModel.Store.productMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userDetails">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="productMST">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_productMST_userDetails_Modified">
+    <End Role="userDetails" Type="SalesDBModel.Store.userDetails" Multiplicity="0..1" />
+    <End Role="productMST" Type="SalesDBModel.Store.productMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userDetails">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="productMST">
+        <PropertyRef Name="LastmodifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_storeMST_accountMST">
+    <End Role="accountMST" Type="SalesDBModel.Store.accountMST" Multiplicity="0..1" />
+    <End Role="storeMST" Type="SalesDBModel.Store.storeMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="accountMST">
+        <PropertyRef Name="accountID" />
+      </Principal>
+      <Dependent Role="storeMST">
+        <PropertyRef Name="accountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_userDetails_accountMST">
+    <End Role="accountMST" Type="SalesDBModel.Store.accountMST" Multiplicity="0..1" />
+    <End Role="userDetails" Type="SalesDBModel.Store.userDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="accountMST">
+        <PropertyRef Name="accountID" />
+      </Principal>
+      <Dependent Role="userDetails">
+        <PropertyRef Name="accountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_userDetails_storeMST">
+    <End Role="storeMST" Type="SalesDBModel.Store.storeMST" Multiplicity="0..1" />
+    <End Role="userDetails" Type="SalesDBModel.Store.userDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="storeMST">
+        <PropertyRef Name="storeID" />
+      </Principal>
+      <Dependent Role="userDetails">
+        <PropertyRef Name="storeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_userDetails_userGroupMST">
+    <End Role="userGroupMST" Type="SalesDBModel.Store.userGroupMST" Multiplicity="0..1" />
+    <End Role="userDetails" Type="SalesDBModel.Store.userDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userGroupMST">
+        <PropertyRef Name="userGroupID" />
+      </Principal>
+      <Dependent Role="userDetails">
+        <PropertyRef Name="userGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_walkinDetails_customerMST">
+    <End Role="customerMST" Type="SalesDBModel.Store.customerMST" Multiplicity="0..1" />
+    <End Role="walkinDetails" Type="SalesDBModel.Store.walkinDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customerMST">
+        <PropertyRef Name="customerID" />
+      </Principal>
+      <Dependent Role="walkinDetails">
+        <PropertyRef Name="customerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_walkinDetails_storeMST">
+    <End Role="storeMST" Type="SalesDBModel.Store.storeMST" Multiplicity="0..1" />
+    <End Role="walkinDetails" Type="SalesDBModel.Store.walkinDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="storeMST">
+        <PropertyRef Name="storeID" />
+      </Principal>
+      <Dependent Role="walkinDetails">
+        <PropertyRef Name="storeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_walkinDetails_userDetails">
+    <End Role="userDetails" Type="SalesDBModel.Store.userDetails" Multiplicity="0..1" />
+    <End Role="walkinDetails" Type="SalesDBModel.Store.walkinDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userDetails">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="walkinDetails">
+        <PropertyRef Name="createdBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

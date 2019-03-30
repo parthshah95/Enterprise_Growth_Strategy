@@ -1,0 +1,627 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SalesDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SalesDBEntities1" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="accountMSTs" EntityType="SalesDBModel.accountMST" />
+    <EntitySet Name="categoryMSTs" EntityType="SalesDBModel.categoryMST" />
+    <EntitySet Name="customerMSTs" EntityType="SalesDBModel.customerMST" />
+    <EntitySet Name="customerStatusMSTs" EntityType="SalesDBModel.customerStatusMST" />
+    <EntitySet Name="customerTypeMSTs" EntityType="SalesDBModel.customerTypeMST" />
+    <EntitySet Name="followups" EntityType="SalesDBModel.followup" />
+    <EntitySet Name="inquiryMSTs" EntityType="SalesDBModel.inquiryMST" />
+    <EntitySet Name="messageMails" EntityType="SalesDBModel.messageMail" />
+    <EntitySet Name="productMSTs" EntityType="SalesDBModel.productMST" />
+    <EntitySet Name="storeMSTs" EntityType="SalesDBModel.storeMST" />
+    <EntitySet Name="userDetails" EntityType="SalesDBModel.userDetail" />
+    <EntitySet Name="userGroupMSTs" EntityType="SalesDBModel.userGroupMST" />
+    <EntitySet Name="walkinDetails" EntityType="SalesDBModel.walkinDetail" />
+    <AssociationSet Name="FK_storeMST_accountMST" Association="SalesDBModel.FK_storeMST_accountMST">
+      <End Role="accountMST" EntitySet="accountMSTs" />
+      <End Role="storeMST" EntitySet="storeMSTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_userDetails_accountMST" Association="SalesDBModel.FK_userDetails_accountMST">
+      <End Role="accountMST" EntitySet="accountMSTs" />
+      <End Role="userDetails" EntitySet="userDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_categoryMST_categoryMST_Parent" Association="SalesDBModel.FK_categoryMST_categoryMST_Parent">
+      <End Role="categoryMST" EntitySet="categoryMSTs" />
+      <End Role="categoryMST1" EntitySet="categoryMSTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_productMST_categoryMST" Association="SalesDBModel.FK_productMST_categoryMST">
+      <End Role="categoryMST" EntitySet="categoryMSTs" />
+      <End Role="productMST" EntitySet="productMSTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customerMST_customerStatusMST" Association="SalesDBModel.FK_customerMST_customerStatusMST">
+      <End Role="customerStatusMST" EntitySet="customerStatusMSTs" />
+      <End Role="customerMST" EntitySet="customerMSTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customerMST_customerTypeMST" Association="SalesDBModel.FK_customerMST_customerTypeMST">
+      <End Role="customerTypeMST" EntitySet="customerTypeMSTs" />
+      <End Role="customerMST" EntitySet="customerMSTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_inquiryMST_customerMST" Association="SalesDBModel.FK_inquiryMST_customerMST">
+      <End Role="customerMST" EntitySet="customerMSTs" />
+      <End Role="inquiryMST" EntitySet="inquiryMSTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_walkinDetails_customerMST" Association="SalesDBModel.FK_walkinDetails_customerMST">
+      <End Role="customerMST" EntitySet="customerMSTs" />
+      <End Role="walkinDetails" EntitySet="walkinDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_followups_inquiryMST" Association="SalesDBModel.FK_followups_inquiryMST">
+      <End Role="inquiryMST" EntitySet="inquiryMSTs" />
+      <End Role="followups" EntitySet="followups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_inquiryMST_productMST" Association="SalesDBModel.FK_inquiryMST_productMST">
+      <End Role="productMST" EntitySet="productMSTs" />
+      <End Role="inquiryMST" EntitySet="inquiryMSTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_inquiryMST_storeMST" Association="SalesDBModel.FK_inquiryMST_storeMST">
+      <End Role="storeMST" EntitySet="storeMSTs" />
+      <End Role="inquiryMST" EntitySet="inquiryMSTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_inquiryMST_userDetails_Owner" Association="SalesDBModel.FK_inquiryMST_userDetails_Owner">
+      <End Role="userDetails" EntitySet="userDetails" />
+      <End Role="inquiryMST" EntitySet="inquiryMSTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_messageMail_messageMail_Parent" Association="SalesDBModel.FK_messageMail_messageMail_Parent">
+      <End Role="messageMail" EntitySet="messageMails" />
+      <End Role="messageMail1" EntitySet="messageMails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_messageMail_userDetails_receiver" Association="SalesDBModel.FK_messageMail_userDetails_receiver">
+      <End Role="userDetails" EntitySet="userDetails" />
+      <End Role="messageMail" EntitySet="messageMails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_messageMail_userDetails_sender" Association="SalesDBModel.FK_messageMail_userDetails_sender">
+      <End Role="userDetails" EntitySet="userDetails" />
+      <End Role="messageMail" EntitySet="messageMails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_productMST_userDetails_Created" Association="SalesDBModel.FK_productMST_userDetails_Created">
+      <End Role="userDetails" EntitySet="userDetails" />
+      <End Role="productMST" EntitySet="productMSTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_productMST_userDetails_Modified" Association="SalesDBModel.FK_productMST_userDetails_Modified">
+      <End Role="userDetails" EntitySet="userDetails" />
+      <End Role="productMST" EntitySet="productMSTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_userDetails_storeMST" Association="SalesDBModel.FK_userDetails_storeMST">
+      <End Role="storeMST" EntitySet="storeMSTs" />
+      <End Role="userDetails" EntitySet="userDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_walkinDetails_storeMST" Association="SalesDBModel.FK_walkinDetails_storeMST">
+      <End Role="storeMST" EntitySet="storeMSTs" />
+      <End Role="walkinDetails" EntitySet="walkinDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_userDetails_userGroupMST" Association="SalesDBModel.FK_userDetails_userGroupMST">
+      <End Role="userGroupMST" EntitySet="userGroupMSTs" />
+      <End Role="userDetails" EntitySet="userDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_walkinDetails_userDetails" Association="SalesDBModel.FK_walkinDetails_userDetails">
+      <End Role="userDetails" EntitySet="userDetails" />
+      <End Role="walkinDetails" EntitySet="walkinDetails" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="accountMST">
+    <Key>
+      <PropertyRef Name="accountID" />
+    </Key>
+    <Property Name="accountID" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="accountName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="accountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="LastmodifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastmodifiedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="accountManage" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="accountManageContact" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="allowedStoreNumber" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="allowedUserNumber" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="storeMSTs" Relationship="SalesDBModel.FK_storeMST_accountMST" FromRole="accountMST" ToRole="storeMST" />
+    <NavigationProperty Name="userDetails" Relationship="SalesDBModel.FK_userDetails_accountMST" FromRole="accountMST" ToRole="userDetails" />
+  </EntityType>
+  <EntityType Name="categoryMST">
+    <Key>
+      <PropertyRef Name="categoryID" />
+    </Key>
+    <Property Name="categoryID" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="catCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="catName" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="catDescription" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="LastmodifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastmodifiedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="parentcategoryID" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="categoryMST1" Relationship="SalesDBModel.FK_categoryMST_categoryMST_Parent" FromRole="categoryMST" ToRole="categoryMST1" />
+    <NavigationProperty Name="categoryMST2" Relationship="SalesDBModel.FK_categoryMST_categoryMST_Parent" FromRole="categoryMST1" ToRole="categoryMST" />
+    <NavigationProperty Name="productMSTs" Relationship="SalesDBModel.FK_productMST_categoryMST" FromRole="categoryMST" ToRole="productMST" />
+  </EntityType>
+  <EntityType Name="customerMST">
+    <Key>
+      <PropertyRef Name="customerID" />
+    </Key>
+    <Property Name="customerID" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="firstName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="lastName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="middelName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="aniverssaryDate" Type="DateTime" Precision="3" />
+    <Property Name="homeNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="cellNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="email" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="website" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="carNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="carCompany" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="customerTypeID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="customerStatusID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="provideNotification" Type="Boolean" />
+    <Property Name="addressLine1" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="addressLine2" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="city" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="state" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="zip" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="country" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="companyName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="designation" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="workPhone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="LastmodifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastmodifiedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="customerPIC" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PANNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PANCopy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DrivingLicenseNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DrivingLicenseCopy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="customerStatusMST" Relationship="SalesDBModel.FK_customerMST_customerStatusMST" FromRole="customerMST" ToRole="customerStatusMST" />
+    <NavigationProperty Name="customerTypeMST" Relationship="SalesDBModel.FK_customerMST_customerTypeMST" FromRole="customerMST" ToRole="customerTypeMST" />
+    <NavigationProperty Name="inquiryMSTs" Relationship="SalesDBModel.FK_inquiryMST_customerMST" FromRole="customerMST" ToRole="inquiryMST" />
+    <NavigationProperty Name="walkinDetails" Relationship="SalesDBModel.FK_walkinDetails_customerMST" FromRole="customerMST" ToRole="walkinDetails" />
+  </EntityType>
+  <EntityType Name="customerStatusMST">
+    <Key>
+      <PropertyRef Name="customerStatusID" />
+    </Key>
+    <Property Name="customerStatusID" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="customerStatus" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="statusDetail" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="isActive" Type="Boolean" />
+    <NavigationProperty Name="customerMSTs" Relationship="SalesDBModel.FK_customerMST_customerStatusMST" FromRole="customerStatusMST" ToRole="customerMST" />
+  </EntityType>
+  <EntityType Name="customerTypeMST">
+    <Key>
+      <PropertyRef Name="customerTypeID" />
+    </Key>
+    <Property Name="customerTypeID" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="customerType" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="typeDetail" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="isActive" Type="Boolean" />
+    <NavigationProperty Name="customerMSTs" Relationship="SalesDBModel.FK_customerMST_customerTypeMST" FromRole="customerTypeMST" ToRole="customerMST" />
+  </EntityType>
+  <EntityType Name="followup">
+    <Key>
+      <PropertyRef Name="followupID" />
+    </Key>
+    <Property Name="followupID" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="followupDate" Type="DateTime" Precision="3" />
+    <Property Name="inquiryID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="isDone" Type="Boolean" />
+    <Property Name="doneDate" Type="DateTime" Precision="3" />
+    <Property Name="followupDetail" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="followupType" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="inquiryMST" Relationship="SalesDBModel.FK_followups_inquiryMST" FromRole="followups" ToRole="inquiryMST" />
+  </EntityType>
+  <EntityType Name="inquiryMST">
+    <Key>
+      <PropertyRef Name="inquiryMST1" />
+    </Key>
+    <Property Name="inquiryMST1" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="customerID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="custName" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="productID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="productName" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="productCode" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="productUnitPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="discountedPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="inquiryType" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="inquiryStatus" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="deletedDate" Type="DateTime" Precision="3" />
+    <Property Name="deletedby" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="createdDate" Type="DateTime" Precision="3" />
+    <Property Name="createdBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="inquiryOwner" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="inquiryOwnerID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="inquiryNextFollowupDate" Type="DateTime" Precision="3" />
+    <Property Name="storeID" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="customerMST" Relationship="SalesDBModel.FK_inquiryMST_customerMST" FromRole="inquiryMST" ToRole="customerMST" />
+    <NavigationProperty Name="followups" Relationship="SalesDBModel.FK_followups_inquiryMST" FromRole="inquiryMST" ToRole="followups" />
+    <NavigationProperty Name="productMST" Relationship="SalesDBModel.FK_inquiryMST_productMST" FromRole="inquiryMST" ToRole="productMST" />
+    <NavigationProperty Name="storeMST" Relationship="SalesDBModel.FK_inquiryMST_storeMST" FromRole="inquiryMST" ToRole="storeMST" />
+    <NavigationProperty Name="userDetail" Relationship="SalesDBModel.FK_inquiryMST_userDetails_Owner" FromRole="inquiryMST" ToRole="userDetails" />
+  </EntityType>
+  <EntityType Name="messageMail">
+    <Key>
+      <PropertyRef Name="messageID" />
+    </Key>
+    <Property Name="messageID" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="senderID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="receiverID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="messageDetail" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="messageDate" Type="DateTime" Precision="3" />
+    <Property Name="isRead" Type="Boolean" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isImportant" Type="Boolean" />
+    <Property Name="messageType" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="parentMessageID" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="messageMail1" Relationship="SalesDBModel.FK_messageMail_messageMail_Parent" FromRole="messageMail" ToRole="messageMail1" />
+    <NavigationProperty Name="messageMail2" Relationship="SalesDBModel.FK_messageMail_messageMail_Parent" FromRole="messageMail1" ToRole="messageMail" />
+    <NavigationProperty Name="userDetail" Relationship="SalesDBModel.FK_messageMail_userDetails_receiver" FromRole="messageMail" ToRole="userDetails" />
+    <NavigationProperty Name="userDetail1" Relationship="SalesDBModel.FK_messageMail_userDetails_sender" FromRole="messageMail" ToRole="userDetails" />
+  </EntityType>
+  <EntityType Name="productMST">
+    <Key>
+      <PropertyRef Name="productID" />
+    </Key>
+    <Property Name="productID" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="productCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="productName" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="productDesciption" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="categoryID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="LastmodifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastmodifiedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="productPic" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="categoryMST" Relationship="SalesDBModel.FK_productMST_categoryMST" FromRole="productMST" ToRole="categoryMST" />
+    <NavigationProperty Name="inquiryMSTs" Relationship="SalesDBModel.FK_inquiryMST_productMST" FromRole="productMST" ToRole="inquiryMST" />
+    <NavigationProperty Name="userDetail" Relationship="SalesDBModel.FK_productMST_userDetails_Created" FromRole="productMST" ToRole="userDetails" />
+    <NavigationProperty Name="userDetail1" Relationship="SalesDBModel.FK_productMST_userDetails_Modified" FromRole="productMST" ToRole="userDetails" />
+  </EntityType>
+  <EntityType Name="storeMST">
+    <Key>
+      <PropertyRef Name="storeID" />
+    </Key>
+    <Property Name="storeID" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="accountID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="storeName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="storeDetail" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="storeHolder" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ContactDetail" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AddressLine1" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="AddressLine2" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="City" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="State" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Zip" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Country" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="LastmodifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastmodifiedBy" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="accountMST" Relationship="SalesDBModel.FK_storeMST_accountMST" FromRole="storeMST" ToRole="accountMST" />
+    <NavigationProperty Name="inquiryMSTs" Relationship="SalesDBModel.FK_inquiryMST_storeMST" FromRole="storeMST" ToRole="inquiryMST" />
+    <NavigationProperty Name="userDetails" Relationship="SalesDBModel.FK_userDetails_storeMST" FromRole="storeMST" ToRole="userDetails" />
+    <NavigationProperty Name="walkinDetails" Relationship="SalesDBModel.FK_walkinDetails_storeMST" FromRole="storeMST" ToRole="walkinDetails" />
+  </EntityType>
+  <EntityType Name="userDetail">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="firstName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="lastName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="contactNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="addressLine1" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="addressLine2" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="city" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="state" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="country" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="userName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="userPass" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="userGroupID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="LastmodifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastmodifiedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="accountID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="storeID" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="accountMST" Relationship="SalesDBModel.FK_userDetails_accountMST" FromRole="userDetails" ToRole="accountMST" />
+    <NavigationProperty Name="inquiryMSTs" Relationship="SalesDBModel.FK_inquiryMST_userDetails_Owner" FromRole="userDetails" ToRole="inquiryMST" />
+    <NavigationProperty Name="messageMails" Relationship="SalesDBModel.FK_messageMail_userDetails_receiver" FromRole="userDetails" ToRole="messageMail" />
+    <NavigationProperty Name="messageMails1" Relationship="SalesDBModel.FK_messageMail_userDetails_sender" FromRole="userDetails" ToRole="messageMail" />
+    <NavigationProperty Name="productMSTs" Relationship="SalesDBModel.FK_productMST_userDetails_Created" FromRole="userDetails" ToRole="productMST" />
+    <NavigationProperty Name="productMSTs1" Relationship="SalesDBModel.FK_productMST_userDetails_Modified" FromRole="userDetails" ToRole="productMST" />
+    <NavigationProperty Name="storeMST" Relationship="SalesDBModel.FK_userDetails_storeMST" FromRole="userDetails" ToRole="storeMST" />
+    <NavigationProperty Name="userGroupMST" Relationship="SalesDBModel.FK_userDetails_userGroupMST" FromRole="userDetails" ToRole="userGroupMST" />
+    <NavigationProperty Name="walkinDetails" Relationship="SalesDBModel.FK_walkinDetails_userDetails" FromRole="userDetails" ToRole="walkinDetails" />
+  </EntityType>
+  <EntityType Name="userGroupMST">
+    <Key>
+      <PropertyRef Name="userGroupID" />
+    </Key>
+    <Property Name="userGroupID" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="groupName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="groupDetail" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="userDetails" Relationship="SalesDBModel.FK_userDetails_userGroupMST" FromRole="userGroupMST" ToRole="userDetails" />
+  </EntityType>
+  <EntityType Name="walkinDetail">
+    <Key>
+      <PropertyRef Name="walkinID" />
+    </Key>
+    <Property Name="walkinID" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="customerID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="walkinDate" Type="DateTime" Precision="3" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="createdBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="createdDate" Type="DateTime" Precision="3" />
+    <Property Name="storeID" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="customerMST" Relationship="SalesDBModel.FK_walkinDetails_customerMST" FromRole="walkinDetails" ToRole="customerMST" />
+    <NavigationProperty Name="storeMST" Relationship="SalesDBModel.FK_walkinDetails_storeMST" FromRole="walkinDetails" ToRole="storeMST" />
+    <NavigationProperty Name="userDetail" Relationship="SalesDBModel.FK_walkinDetails_userDetails" FromRole="walkinDetails" ToRole="userDetails" />
+  </EntityType>
+  <Association Name="FK_storeMST_accountMST">
+    <End Role="accountMST" Type="SalesDBModel.accountMST" Multiplicity="0..1" />
+    <End Role="storeMST" Type="SalesDBModel.storeMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="accountMST">
+        <PropertyRef Name="accountID" />
+      </Principal>
+      <Dependent Role="storeMST">
+        <PropertyRef Name="accountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_userDetails_accountMST">
+    <End Role="accountMST" Type="SalesDBModel.accountMST" Multiplicity="0..1" />
+    <End Role="userDetails" Type="SalesDBModel.userDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="accountMST">
+        <PropertyRef Name="accountID" />
+      </Principal>
+      <Dependent Role="userDetails">
+        <PropertyRef Name="accountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_categoryMST_categoryMST_Parent">
+    <End Role="categoryMST" Type="SalesDBModel.categoryMST" Multiplicity="0..1" />
+    <End Role="categoryMST1" Type="SalesDBModel.categoryMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categoryMST">
+        <PropertyRef Name="categoryID" />
+      </Principal>
+      <Dependent Role="categoryMST1">
+        <PropertyRef Name="parentcategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_productMST_categoryMST">
+    <End Role="categoryMST" Type="SalesDBModel.categoryMST" Multiplicity="0..1" />
+    <End Role="productMST" Type="SalesDBModel.productMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categoryMST">
+        <PropertyRef Name="categoryID" />
+      </Principal>
+      <Dependent Role="productMST">
+        <PropertyRef Name="categoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customerMST_customerStatusMST">
+    <End Role="customerStatusMST" Type="SalesDBModel.customerStatusMST" Multiplicity="0..1" />
+    <End Role="customerMST" Type="SalesDBModel.customerMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customerStatusMST">
+        <PropertyRef Name="customerStatusID" />
+      </Principal>
+      <Dependent Role="customerMST">
+        <PropertyRef Name="customerStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customerMST_customerTypeMST">
+    <End Role="customerTypeMST" Type="SalesDBModel.customerTypeMST" Multiplicity="0..1" />
+    <End Role="customerMST" Type="SalesDBModel.customerMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customerTypeMST">
+        <PropertyRef Name="customerTypeID" />
+      </Principal>
+      <Dependent Role="customerMST">
+        <PropertyRef Name="customerTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_inquiryMST_customerMST">
+    <End Role="customerMST" Type="SalesDBModel.customerMST" Multiplicity="0..1" />
+    <End Role="inquiryMST" Type="SalesDBModel.inquiryMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customerMST">
+        <PropertyRef Name="customerID" />
+      </Principal>
+      <Dependent Role="inquiryMST">
+        <PropertyRef Name="customerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_walkinDetails_customerMST">
+    <End Role="customerMST" Type="SalesDBModel.customerMST" Multiplicity="0..1" />
+    <End Role="walkinDetails" Type="SalesDBModel.walkinDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customerMST">
+        <PropertyRef Name="customerID" />
+      </Principal>
+      <Dependent Role="walkinDetails">
+        <PropertyRef Name="customerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_followups_inquiryMST">
+    <End Role="inquiryMST" Type="SalesDBModel.inquiryMST" Multiplicity="0..1" />
+    <End Role="followups" Type="SalesDBModel.followup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inquiryMST">
+        <PropertyRef Name="inquiryMST1" />
+      </Principal>
+      <Dependent Role="followups">
+        <PropertyRef Name="inquiryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_inquiryMST_productMST">
+    <End Role="productMST" Type="SalesDBModel.productMST" Multiplicity="0..1" />
+    <End Role="inquiryMST" Type="SalesDBModel.inquiryMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productMST">
+        <PropertyRef Name="productID" />
+      </Principal>
+      <Dependent Role="inquiryMST">
+        <PropertyRef Name="productID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_inquiryMST_storeMST">
+    <End Role="storeMST" Type="SalesDBModel.storeMST" Multiplicity="0..1" />
+    <End Role="inquiryMST" Type="SalesDBModel.inquiryMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="storeMST">
+        <PropertyRef Name="storeID" />
+      </Principal>
+      <Dependent Role="inquiryMST">
+        <PropertyRef Name="storeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_inquiryMST_userDetails_Owner">
+    <End Role="userDetails" Type="SalesDBModel.userDetail" Multiplicity="0..1" />
+    <End Role="inquiryMST" Type="SalesDBModel.inquiryMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userDetails">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="inquiryMST">
+        <PropertyRef Name="inquiryOwnerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_messageMail_messageMail_Parent">
+    <End Role="messageMail" Type="SalesDBModel.messageMail" Multiplicity="0..1" />
+    <End Role="messageMail1" Type="SalesDBModel.messageMail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="messageMail">
+        <PropertyRef Name="messageID" />
+      </Principal>
+      <Dependent Role="messageMail1">
+        <PropertyRef Name="parentMessageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_messageMail_userDetails_receiver">
+    <End Role="userDetails" Type="SalesDBModel.userDetail" Multiplicity="0..1" />
+    <End Role="messageMail" Type="SalesDBModel.messageMail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userDetails">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="messageMail">
+        <PropertyRef Name="receiverID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_messageMail_userDetails_sender">
+    <End Role="userDetails" Type="SalesDBModel.userDetail" Multiplicity="0..1" />
+    <End Role="messageMail" Type="SalesDBModel.messageMail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userDetails">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="messageMail">
+        <PropertyRef Name="senderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_productMST_userDetails_Created">
+    <End Role="userDetails" Type="SalesDBModel.userDetail" Multiplicity="0..1" />
+    <End Role="productMST" Type="SalesDBModel.productMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userDetails">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="productMST">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_productMST_userDetails_Modified">
+    <End Role="userDetails" Type="SalesDBModel.userDetail" Multiplicity="0..1" />
+    <End Role="productMST" Type="SalesDBModel.productMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userDetails">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="productMST">
+        <PropertyRef Name="LastmodifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_userDetails_storeMST">
+    <End Role="storeMST" Type="SalesDBModel.storeMST" Multiplicity="0..1" />
+    <End Role="userDetails" Type="SalesDBModel.userDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="storeMST">
+        <PropertyRef Name="storeID" />
+      </Principal>
+      <Dependent Role="userDetails">
+        <PropertyRef Name="storeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_walkinDetails_storeMST">
+    <End Role="storeMST" Type="SalesDBModel.storeMST" Multiplicity="0..1" />
+    <End Role="walkinDetails" Type="SalesDBModel.walkinDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="storeMST">
+        <PropertyRef Name="storeID" />
+      </Principal>
+      <Dependent Role="walkinDetails">
+        <PropertyRef Name="storeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_userDetails_userGroupMST">
+    <End Role="userGroupMST" Type="SalesDBModel.userGroupMST" Multiplicity="0..1" />
+    <End Role="userDetails" Type="SalesDBModel.userDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userGroupMST">
+        <PropertyRef Name="userGroupID" />
+      </Principal>
+      <Dependent Role="userDetails">
+        <PropertyRef Name="userGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_walkinDetails_userDetails">
+    <End Role="userDetails" Type="SalesDBModel.userDetail" Multiplicity="0..1" />
+    <End Role="walkinDetails" Type="SalesDBModel.walkinDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userDetails">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="walkinDetails">
+        <PropertyRef Name="createdBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

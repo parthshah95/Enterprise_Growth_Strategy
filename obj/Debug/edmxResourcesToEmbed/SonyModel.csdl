@@ -1,0 +1,627 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Sony3Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="Sony3Entities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="accountMSTs" EntityType="Sony3Model.accountMST" />
+    <EntitySet Name="categoryMSTs" EntityType="Sony3Model.categoryMST" />
+    <EntitySet Name="customerMSTs" EntityType="Sony3Model.customerMST" />
+    <EntitySet Name="customerStatusMSTs" EntityType="Sony3Model.customerStatusMST" />
+    <EntitySet Name="customerTypeMSTs" EntityType="Sony3Model.customerTypeMST" />
+    <EntitySet Name="inquiryMSTs" EntityType="Sony3Model.inquiryMST" />
+    <EntitySet Name="messageMails" EntityType="Sony3Model.messageMail" />
+    <EntitySet Name="productMSTs" EntityType="Sony3Model.productMST" />
+    <EntitySet Name="storeMSTs" EntityType="Sony3Model.storeMST" />
+    <EntitySet Name="userDetails" EntityType="Sony3Model.userDetail" />
+    <EntitySet Name="userGroupMSTs" EntityType="Sony3Model.userGroupMST" />
+    <EntitySet Name="followups" EntityType="Sony3Model.followup" />
+    <EntitySet Name="walkinDetails" EntityType="Sony3Model.walkinDetail" />
+    <AssociationSet Name="FK_storeMST_accountMST" Association="Sony3Model.FK_storeMST_accountMST">
+      <End Role="accountMST" EntitySet="accountMSTs" />
+      <End Role="storeMST" EntitySet="storeMSTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_userDetails_accountMST" Association="Sony3Model.FK_userDetails_accountMST">
+      <End Role="accountMST" EntitySet="accountMSTs" />
+      <End Role="userDetail" EntitySet="userDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_categoryMST_categoryMST_Parent" Association="Sony3Model.FK_categoryMST_categoryMST_Parent">
+      <End Role="categoryMST" EntitySet="categoryMSTs" />
+      <End Role="categoryMST1" EntitySet="categoryMSTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_productMST_categoryMST" Association="Sony3Model.FK_productMST_categoryMST">
+      <End Role="categoryMST" EntitySet="categoryMSTs" />
+      <End Role="productMST" EntitySet="productMSTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customerMST_customerStatusMST" Association="Sony3Model.FK_customerMST_customerStatusMST">
+      <End Role="customerStatusMST" EntitySet="customerStatusMSTs" />
+      <End Role="customerMST" EntitySet="customerMSTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_customerMST_customerTypeMST" Association="Sony3Model.FK_customerMST_customerTypeMST">
+      <End Role="customerTypeMST" EntitySet="customerTypeMSTs" />
+      <End Role="customerMST" EntitySet="customerMSTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_inquiryMST_customerMST" Association="Sony3Model.FK_inquiryMST_customerMST">
+      <End Role="customerMST" EntitySet="customerMSTs" />
+      <End Role="inquiryMST" EntitySet="inquiryMSTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_walkinDetails_customerMST" Association="Sony3Model.FK_walkinDetails_customerMST">
+      <End Role="customerMST" EntitySet="customerMSTs" />
+      <End Role="walkinDetail" EntitySet="walkinDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_followups_inquiryMST" Association="Sony3Model.FK_followups_inquiryMST">
+      <End Role="inquiryMST" EntitySet="inquiryMSTs" />
+      <End Role="followup" EntitySet="followups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_inquiryMST_productMST" Association="Sony3Model.FK_inquiryMST_productMST">
+      <End Role="productMST" EntitySet="productMSTs" />
+      <End Role="inquiryMST" EntitySet="inquiryMSTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_inquiryMST_storeMST" Association="Sony3Model.FK_inquiryMST_storeMST">
+      <End Role="storeMST" EntitySet="storeMSTs" />
+      <End Role="inquiryMST" EntitySet="inquiryMSTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_inquiryMST_userDetails_Owner" Association="Sony3Model.FK_inquiryMST_userDetails_Owner">
+      <End Role="userDetail" EntitySet="userDetails" />
+      <End Role="inquiryMST" EntitySet="inquiryMSTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_messageMail_messageMail_Parent" Association="Sony3Model.FK_messageMail_messageMail_Parent">
+      <End Role="messageMail" EntitySet="messageMails" />
+      <End Role="messageMail1" EntitySet="messageMails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_messageMail_userDetails_receiver" Association="Sony3Model.FK_messageMail_userDetails_receiver">
+      <End Role="userDetail" EntitySet="userDetails" />
+      <End Role="messageMail" EntitySet="messageMails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_messageMail_userDetails_sender" Association="Sony3Model.FK_messageMail_userDetails_sender">
+      <End Role="userDetail" EntitySet="userDetails" />
+      <End Role="messageMail" EntitySet="messageMails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_productMST_userDetails_Created" Association="Sony3Model.FK_productMST_userDetails_Created">
+      <End Role="userDetail" EntitySet="userDetails" />
+      <End Role="productMST" EntitySet="productMSTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_productMST_userDetails_Modified" Association="Sony3Model.FK_productMST_userDetails_Modified">
+      <End Role="userDetail" EntitySet="userDetails" />
+      <End Role="productMST" EntitySet="productMSTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_walkinDetails_storeMST" Association="Sony3Model.FK_walkinDetails_storeMST">
+      <End Role="storeMST" EntitySet="storeMSTs" />
+      <End Role="walkinDetail" EntitySet="walkinDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_userDetails_userGroupMST" Association="Sony3Model.FK_userDetails_userGroupMST">
+      <End Role="userGroupMST" EntitySet="userGroupMSTs" />
+      <End Role="userDetail" EntitySet="userDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_walkinDetails_userDetails" Association="Sony3Model.FK_walkinDetails_userDetails">
+      <End Role="userDetail" EntitySet="userDetails" />
+      <End Role="walkinDetail" EntitySet="walkinDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_userDetails_storeMST" Association="Sony3Model.FK_userDetails_storeMST">
+      <End Role="storeMST" EntitySet="storeMSTs" />
+      <End Role="userDetail" EntitySet="userDetails" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="accountMST">
+    <Key>
+      <PropertyRef Name="accountID" />
+    </Key>
+    <Property Name="accountID" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="accountName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="accountCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="LastmodifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastmodifiedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="accountManage" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="accountManageContact" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="allowedStoreNumber" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="allowedUserNumber" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="storeMSTs" Relationship="Sony3Model.FK_storeMST_accountMST" FromRole="accountMST" ToRole="storeMST" />
+    <NavigationProperty Name="userDetails" Relationship="Sony3Model.FK_userDetails_accountMST" FromRole="accountMST" ToRole="userDetail" />
+  </EntityType>
+  <EntityType Name="categoryMST">
+    <Key>
+      <PropertyRef Name="categoryID" />
+    </Key>
+    <Property Name="categoryID" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="catCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="catName" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="catDescription" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="LastmodifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastmodifiedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="parentcategoryID" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="categoryMST1" Relationship="Sony3Model.FK_categoryMST_categoryMST_Parent" FromRole="categoryMST" ToRole="categoryMST1" />
+    <NavigationProperty Name="categoryMST2" Relationship="Sony3Model.FK_categoryMST_categoryMST_Parent" FromRole="categoryMST1" ToRole="categoryMST" />
+    <NavigationProperty Name="productMSTs" Relationship="Sony3Model.FK_productMST_categoryMST" FromRole="categoryMST" ToRole="productMST" />
+  </EntityType>
+  <EntityType Name="customerMST">
+    <Key>
+      <PropertyRef Name="customerID" />
+    </Key>
+    <Property Name="customerID" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="firstName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="lastName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="middelName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="aniverssaryDate" Type="DateTime" Precision="3" />
+    <Property Name="homeNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="cellNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="email" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="website" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="carNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="carCompany" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="customerTypeID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="customerStatusID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="provideNotification" Type="Boolean" />
+    <Property Name="addressLine1" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="addressLine2" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="city" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="state" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="zip" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="country" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="companyName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="designation" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="workPhone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="LastmodifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastmodifiedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="customerPIC" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PANNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="PANCopy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DrivingLicenseNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DrivingLicenseCopy" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="customerStatusMST" Relationship="Sony3Model.FK_customerMST_customerStatusMST" FromRole="customerMST" ToRole="customerStatusMST" />
+    <NavigationProperty Name="customerTypeMST" Relationship="Sony3Model.FK_customerMST_customerTypeMST" FromRole="customerMST" ToRole="customerTypeMST" />
+    <NavigationProperty Name="inquiryMSTs" Relationship="Sony3Model.FK_inquiryMST_customerMST" FromRole="customerMST" ToRole="inquiryMST" />
+    <NavigationProperty Name="walkinDetails" Relationship="Sony3Model.FK_walkinDetails_customerMST" FromRole="customerMST" ToRole="walkinDetail" />
+  </EntityType>
+  <EntityType Name="customerStatusMST">
+    <Key>
+      <PropertyRef Name="customerStatusID" />
+    </Key>
+    <Property Name="customerStatusID" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="customerStatus" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="statusDetail" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="isActive" Type="Boolean" />
+    <NavigationProperty Name="customerMSTs" Relationship="Sony3Model.FK_customerMST_customerStatusMST" FromRole="customerStatusMST" ToRole="customerMST" />
+  </EntityType>
+  <EntityType Name="customerTypeMST">
+    <Key>
+      <PropertyRef Name="customerTypeID" />
+    </Key>
+    <Property Name="customerTypeID" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="customerType" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="typeDetail" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="isActive" Type="Boolean" />
+    <NavigationProperty Name="customerMSTs" Relationship="Sony3Model.FK_customerMST_customerTypeMST" FromRole="customerTypeMST" ToRole="customerMST" />
+  </EntityType>
+  <EntityType Name="inquiryMST">
+    <Key>
+      <PropertyRef Name="inquiryMST1" />
+    </Key>
+    <Property Name="inquiryMST1" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="customerID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="custName" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="productID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="productName" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="productCode" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="productUnitPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="discountedPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="inquiryType" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="inquiryStatus" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="deletedDate" Type="DateTime" Precision="3" />
+    <Property Name="deletedby" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="createdDate" Type="DateTime" Precision="3" />
+    <Property Name="createdBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="inquiryOwner" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="inquiryOwnerID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="inquiryNextFollowupDate" Type="DateTime" Precision="3" />
+    <Property Type="Decimal" Name="storeID" Precision="18" Scale="0" />
+    <NavigationProperty Name="customerMST" Relationship="Sony3Model.FK_inquiryMST_customerMST" FromRole="inquiryMST" ToRole="customerMST" />
+    <NavigationProperty Name="followups" Relationship="Sony3Model.FK_followups_inquiryMST" FromRole="inquiryMST" ToRole="followup" />
+    <NavigationProperty Name="productMST" Relationship="Sony3Model.FK_inquiryMST_productMST" FromRole="inquiryMST" ToRole="productMST" />
+    <NavigationProperty Name="storeMST" Relationship="Sony3Model.FK_inquiryMST_storeMST" FromRole="inquiryMST" ToRole="storeMST" />
+    <NavigationProperty Name="userDetail" Relationship="Sony3Model.FK_inquiryMST_userDetails_Owner" FromRole="inquiryMST" ToRole="userDetail" />
+  </EntityType>
+  <EntityType Name="messageMail">
+    <Key>
+      <PropertyRef Name="messageID" />
+    </Key>
+    <Property Name="messageID" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="senderID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="receiverID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="messageDetail" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="messageDate" Type="DateTime" Precision="3" />
+    <Property Name="isRead" Type="Boolean" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="isImportant" Type="Boolean" />
+    <Property Name="messageType" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="parentMessageID" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="messageMail1" Relationship="Sony3Model.FK_messageMail_messageMail_Parent" FromRole="messageMail" ToRole="messageMail1" />
+    <NavigationProperty Name="messageMail2" Relationship="Sony3Model.FK_messageMail_messageMail_Parent" FromRole="messageMail1" ToRole="messageMail" />
+    <NavigationProperty Name="userDetail" Relationship="Sony3Model.FK_messageMail_userDetails_receiver" FromRole="messageMail" ToRole="userDetail" />
+    <NavigationProperty Name="userDetail1" Relationship="Sony3Model.FK_messageMail_userDetails_sender" FromRole="messageMail" ToRole="userDetail" />
+  </EntityType>
+  <EntityType Name="productMST">
+    <Key>
+      <PropertyRef Name="productID" />
+    </Key>
+    <Property Name="productID" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="productCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="productName" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="productDesciption" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="categoryID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="LastmodifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastmodifiedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="productPic" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="categoryMST" Relationship="Sony3Model.FK_productMST_categoryMST" FromRole="productMST" ToRole="categoryMST" />
+    <NavigationProperty Name="inquiryMSTs" Relationship="Sony3Model.FK_inquiryMST_productMST" FromRole="productMST" ToRole="inquiryMST" />
+    <NavigationProperty Name="userDetail" Relationship="Sony3Model.FK_productMST_userDetails_Created" FromRole="productMST" ToRole="userDetail" />
+    <NavigationProperty Name="userDetail1" Relationship="Sony3Model.FK_productMST_userDetails_Modified" FromRole="productMST" ToRole="userDetail" />
+  </EntityType>
+  <EntityType Name="storeMST">
+    <Key>
+      <PropertyRef Name="storeID" />
+    </Key>
+    <Property Name="storeID" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="accountID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="storeName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="storeDetail" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="storeHolder" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ContactDetail" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AddressLine1" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="AddressLine2" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="City" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="State" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Zip" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Country" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="LastmodifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastmodifiedBy" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="accountMST" Relationship="Sony3Model.FK_storeMST_accountMST" FromRole="storeMST" ToRole="accountMST" />
+    <NavigationProperty Name="inquiryMSTs" Relationship="Sony3Model.FK_inquiryMST_storeMST" FromRole="storeMST" ToRole="inquiryMST" />
+    <NavigationProperty Name="walkinDetails" Relationship="Sony3Model.FK_walkinDetails_storeMST" FromRole="storeMST" ToRole="walkinDetail" />
+    <NavigationProperty Name="userDetails" Relationship="Sony3Model.FK_userDetails_storeMST" FromRole="storeMST" ToRole="userDetail" />
+  </EntityType>
+  <EntityType Name="userDetail">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="firstName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="lastName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="contactNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="addressLine1" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="addressLine2" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="city" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="state" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="country" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="userName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="userPass" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="userGroupID" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="LastmodifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastmodifiedBy" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="accountID" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="accountMST" Relationship="Sony3Model.FK_userDetails_accountMST" FromRole="userDetail" ToRole="accountMST" />
+    <NavigationProperty Name="inquiryMSTs" Relationship="Sony3Model.FK_inquiryMST_userDetails_Owner" FromRole="userDetail" ToRole="inquiryMST" />
+    <NavigationProperty Name="messageMails" Relationship="Sony3Model.FK_messageMail_userDetails_receiver" FromRole="userDetail" ToRole="messageMail" />
+    <NavigationProperty Name="messageMails1" Relationship="Sony3Model.FK_messageMail_userDetails_sender" FromRole="userDetail" ToRole="messageMail" />
+    <NavigationProperty Name="productMSTs" Relationship="Sony3Model.FK_productMST_userDetails_Created" FromRole="userDetail" ToRole="productMST" />
+    <NavigationProperty Name="productMSTs1" Relationship="Sony3Model.FK_productMST_userDetails_Modified" FromRole="userDetail" ToRole="productMST" />
+    <NavigationProperty Name="userGroupMST" Relationship="Sony3Model.FK_userDetails_userGroupMST" FromRole="userDetail" ToRole="userGroupMST" />
+    <NavigationProperty Name="walkinDetails" Relationship="Sony3Model.FK_walkinDetails_userDetails" FromRole="userDetail" ToRole="walkinDetail" />
+    <Property Type="Decimal" Name="storeID" Precision="18" Scale="0" />
+    <NavigationProperty Name="storeMST" Relationship="Sony3Model.FK_userDetails_storeMST" FromRole="userDetail" ToRole="storeMST" />
+  </EntityType>
+  <EntityType Name="userGroupMST">
+    <Key>
+      <PropertyRef Name="userGroupID" />
+    </Key>
+    <Property Name="userGroupID" Type="Decimal" Nullable="false" Precision="18" Scale="0" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="groupName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="groupDetail" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="userDetails" Relationship="Sony3Model.FK_userDetails_userGroupMST" FromRole="userGroupMST" ToRole="userDetail" />
+  </EntityType>
+  <EntityType Name="followup">
+    <Key>
+      <PropertyRef Name="followupID" />
+    </Key>
+    <Property Type="Decimal" Name="followupID" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="followupDate" Precision="3" />
+    <Property Type="Decimal" Name="inquiryID" Precision="18" Scale="0" />
+    <Property Type="Boolean" Name="isActive" />
+    <Property Type="Boolean" Name="isDone" />
+    <Property Type="DateTime" Name="doneDate" Precision="3" />
+    <Property Type="String" Name="followupDetail" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="followupType" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="inquiryMST" Relationship="Sony3Model.FK_followups_inquiryMST" FromRole="followup" ToRole="inquiryMST" />
+  </EntityType>
+  <EntityType Name="walkinDetail">
+    <Key>
+      <PropertyRef Name="walkinID" />
+    </Key>
+    <Property Type="Decimal" Name="walkinID" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Decimal" Name="customerID" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="walkinDate" Precision="3" />
+    <Property Type="Boolean" Name="isDeleted" />
+    <Property Type="Decimal" Name="createdBy" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="createdDate" Precision="3" />
+    <Property Type="Decimal" Name="storeID" Precision="18" Scale="0" />
+    <NavigationProperty Name="customerMST" Relationship="Sony3Model.FK_walkinDetails_customerMST" FromRole="walkinDetail" ToRole="customerMST" />
+    <NavigationProperty Name="storeMST" Relationship="Sony3Model.FK_walkinDetails_storeMST" FromRole="walkinDetail" ToRole="storeMST" />
+    <NavigationProperty Name="userDetail" Relationship="Sony3Model.FK_walkinDetails_userDetails" FromRole="walkinDetail" ToRole="userDetail" />
+  </EntityType>
+  <Association Name="FK_storeMST_accountMST">
+    <End Type="Sony3Model.accountMST" Role="accountMST" Multiplicity="0..1" />
+    <End Type="Sony3Model.storeMST" Role="storeMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="accountMST">
+        <PropertyRef Name="accountID" />
+      </Principal>
+      <Dependent Role="storeMST">
+        <PropertyRef Name="accountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_userDetails_accountMST">
+    <End Type="Sony3Model.accountMST" Role="accountMST" Multiplicity="0..1" />
+    <End Type="Sony3Model.userDetail" Role="userDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="accountMST">
+        <PropertyRef Name="accountID" />
+      </Principal>
+      <Dependent Role="userDetail">
+        <PropertyRef Name="accountID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_categoryMST_categoryMST_Parent">
+    <End Type="Sony3Model.categoryMST" Role="categoryMST" Multiplicity="0..1" />
+    <End Type="Sony3Model.categoryMST" Role="categoryMST1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categoryMST">
+        <PropertyRef Name="categoryID" />
+      </Principal>
+      <Dependent Role="categoryMST1">
+        <PropertyRef Name="parentcategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_productMST_categoryMST">
+    <End Type="Sony3Model.categoryMST" Role="categoryMST" Multiplicity="0..1" />
+    <End Type="Sony3Model.productMST" Role="productMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categoryMST">
+        <PropertyRef Name="categoryID" />
+      </Principal>
+      <Dependent Role="productMST">
+        <PropertyRef Name="categoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customerMST_customerStatusMST">
+    <End Type="Sony3Model.customerStatusMST" Role="customerStatusMST" Multiplicity="0..1" />
+    <End Type="Sony3Model.customerMST" Role="customerMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customerStatusMST">
+        <PropertyRef Name="customerStatusID" />
+      </Principal>
+      <Dependent Role="customerMST">
+        <PropertyRef Name="customerStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_customerMST_customerTypeMST">
+    <End Type="Sony3Model.customerTypeMST" Role="customerTypeMST" Multiplicity="0..1" />
+    <End Type="Sony3Model.customerMST" Role="customerMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customerTypeMST">
+        <PropertyRef Name="customerTypeID" />
+      </Principal>
+      <Dependent Role="customerMST">
+        <PropertyRef Name="customerTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_inquiryMST_customerMST">
+    <End Type="Sony3Model.customerMST" Role="customerMST" Multiplicity="0..1" />
+    <End Type="Sony3Model.inquiryMST" Role="inquiryMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customerMST">
+        <PropertyRef Name="customerID" />
+      </Principal>
+      <Dependent Role="inquiryMST">
+        <PropertyRef Name="customerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_walkinDetails_customerMST">
+    <End Type="Sony3Model.customerMST" Role="customerMST" Multiplicity="0..1" />
+    <End Type="Sony3Model.walkinDetail" Role="walkinDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customerMST">
+        <PropertyRef Name="customerID" />
+      </Principal>
+      <Dependent Role="walkinDetail">
+        <PropertyRef Name="customerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_followups_inquiryMST">
+    <End Type="Sony3Model.inquiryMST" Role="inquiryMST" Multiplicity="0..1" />
+    <End Type="Sony3Model.followup" Role="followup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inquiryMST">
+        <PropertyRef Name="inquiryMST1" />
+      </Principal>
+      <Dependent Role="followup">
+        <PropertyRef Name="inquiryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_inquiryMST_productMST">
+    <End Type="Sony3Model.productMST" Role="productMST" Multiplicity="0..1" />
+    <End Type="Sony3Model.inquiryMST" Role="inquiryMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productMST">
+        <PropertyRef Name="productID" />
+      </Principal>
+      <Dependent Role="inquiryMST">
+        <PropertyRef Name="productID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_inquiryMST_storeMST">
+    <End Type="Sony3Model.storeMST" Role="storeMST" Multiplicity="0..1" />
+    <End Type="Sony3Model.inquiryMST" Role="inquiryMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="storeMST">
+        <PropertyRef Name="storeID" />
+      </Principal>
+      <Dependent Role="inquiryMST">
+        <PropertyRef Name="storeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_inquiryMST_userDetails_Owner">
+    <End Type="Sony3Model.userDetail" Role="userDetail" Multiplicity="0..1" />
+    <End Type="Sony3Model.inquiryMST" Role="inquiryMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userDetail">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="inquiryMST">
+        <PropertyRef Name="inquiryOwnerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_messageMail_messageMail_Parent">
+    <End Type="Sony3Model.messageMail" Role="messageMail" Multiplicity="0..1" />
+    <End Type="Sony3Model.messageMail" Role="messageMail1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="messageMail">
+        <PropertyRef Name="messageID" />
+      </Principal>
+      <Dependent Role="messageMail1">
+        <PropertyRef Name="parentMessageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_messageMail_userDetails_receiver">
+    <End Type="Sony3Model.userDetail" Role="userDetail" Multiplicity="0..1" />
+    <End Type="Sony3Model.messageMail" Role="messageMail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userDetail">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="messageMail">
+        <PropertyRef Name="receiverID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_messageMail_userDetails_sender">
+    <End Type="Sony3Model.userDetail" Role="userDetail" Multiplicity="0..1" />
+    <End Type="Sony3Model.messageMail" Role="messageMail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userDetail">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="messageMail">
+        <PropertyRef Name="senderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_productMST_userDetails_Created">
+    <End Type="Sony3Model.userDetail" Role="userDetail" Multiplicity="0..1" />
+    <End Type="Sony3Model.productMST" Role="productMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userDetail">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="productMST">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_productMST_userDetails_Modified">
+    <End Type="Sony3Model.userDetail" Role="userDetail" Multiplicity="0..1" />
+    <End Type="Sony3Model.productMST" Role="productMST" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userDetail">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="productMST">
+        <PropertyRef Name="LastmodifiedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_walkinDetails_storeMST">
+    <End Type="Sony3Model.storeMST" Role="storeMST" Multiplicity="0..1" />
+    <End Type="Sony3Model.walkinDetail" Role="walkinDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="storeMST">
+        <PropertyRef Name="storeID" />
+      </Principal>
+      <Dependent Role="walkinDetail">
+        <PropertyRef Name="storeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_userDetails_userGroupMST">
+    <End Type="Sony3Model.userGroupMST" Role="userGroupMST" Multiplicity="0..1" />
+    <End Type="Sony3Model.userDetail" Role="userDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userGroupMST">
+        <PropertyRef Name="userGroupID" />
+      </Principal>
+      <Dependent Role="userDetail">
+        <PropertyRef Name="userGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_walkinDetails_userDetails">
+    <End Type="Sony3Model.userDetail" Role="userDetail" Multiplicity="0..1" />
+    <End Type="Sony3Model.walkinDetail" Role="walkinDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="userDetail">
+        <PropertyRef Name="userID" />
+      </Principal>
+      <Dependent Role="walkinDetail">
+        <PropertyRef Name="createdBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_userDetails_storeMST">
+    <End Type="Sony3Model.storeMST" Role="storeMST" Multiplicity="0..1" />
+    <End Type="Sony3Model.userDetail" Role="userDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="storeMST">
+        <PropertyRef Name="storeID" />
+      </Principal>
+      <Dependent Role="userDetail">
+        <PropertyRef Name="storeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
